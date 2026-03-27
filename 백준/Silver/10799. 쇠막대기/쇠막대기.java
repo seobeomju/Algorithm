@@ -6,9 +6,7 @@ import java.util.Stack;
 class Main {
     public static void main(String[] args) throws IOException {
         
-        //(로 열면 isFalse = true
-        // ()쌍으로 나오면 isFalse = false로 전환 and 맨위의 pop한다음 갯수 체크
-        // isFalse = false상태에서 )로 들어올시 맨위에 pop ㅇㅈ?
+      
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
