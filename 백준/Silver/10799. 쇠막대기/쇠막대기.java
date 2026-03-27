@@ -1,0 +1,38 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        
+        //(로 열면 isFalse = true
+        // ()쌍으로 나오면 isFalse = false로 전환 and 맨위의 pop한다음 갯수 체크
+        // isFalse = false상태에서 )로 들어올시 맨위에 pop ㅇㅈ?
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String input = br.readLine();
+        Stack<Character> stack = new Stack<>();
+        int count = 0;
+        
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            
+            if(c == '('){
+                stack.push(c);
+            }else{
+                stack.pop();
+
+                if(input.charAt(i-1)=='('){
+                    count += stack.size();
+                }
+                else{
+                    count+=1;
+                }
+            }
+        }
+
+        System.out.println(count);
+    }
+}
