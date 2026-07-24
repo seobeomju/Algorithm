@@ -1,0 +1,11 @@
+-- 코드를 작성해주세요
+-- 2022년도 한해 평가 점수가 가장 높은 사우너
+-- 평가 점수 -> 상 하 반기 점수 합
+-- 점수, 사번 성명, 직책, 이메일
+
+SELECT SUM(G.SCORE) AS SCORE, E.EMP_NO, E.EMP_NAME, E.POSITION, E.EMAIL
+FROM HR_EMPLOYEES E JOIN HR_GRADE G ON E.EMP_NO = G.EMP_NO
+WHERE G.YEAR = 2022
+GROUP BY G.EMP_NO
+ORDER BY SCORE DESC
+LIMIT 1;
